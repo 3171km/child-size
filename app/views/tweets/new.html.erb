@@ -4,7 +4,10 @@
     <%= form_with(model: @tweet, local: true) do |form| %>
       <%= form.text_field :name, placeholder: "Nickname" %>
       <%= form.text_field :image, placeholder: "Image Url" %>
-      <%= form.text_area :text, placeholder: "text", rows: "10" %>
+      <%= form.text_field :tops_size,  placeholder: "Tops_size" %>
+      <%= form.text_field :bottoms_size,  placeholder: "Bottoms_size" %>
+      <%= form.text_field :shoes_size,  placeholder: "Shoes_size" %>
+      <%= form.text_area :text, placeholder: "Memo", rows: "10" %>
       <%= form.submit "SEND" %>
     <% end %>
   </div>
