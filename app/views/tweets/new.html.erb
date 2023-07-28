@@ -5,7 +5,7 @@
       <%= form.text_field :tops_size,  placeholder: "Tops_size" %>
       <%= form.text_field :bottoms_size,  placeholder: "Bottoms_size" %>
       <%= form.text_field :shoes_size,  placeholder: "Shoes_size" %>
-      <%= form.text_field :image, placeholder: "Image Url" %>
+      <%= form.file_field :image %>
       <%= form.text_area :text, placeholder: "Memo", rows: "10" %>
       <%= form.submit "SEND" %>
     <% end %>

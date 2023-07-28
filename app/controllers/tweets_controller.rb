@@ -12,7 +12,12 @@ class TweetsController < ApplicationController
   end
 
   def create
-    Tweet.create(tweet_params)
+    @tweet = Tweet.new(tweet_params)
+    if @tweet.save
+      redirect_to @tweet, notice: '投稿されました。'
+    else
+      render :new
+    end
   end
 
   def destroy
