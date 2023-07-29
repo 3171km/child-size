@@ -1,8 +1,8 @@
 <div class="contents row">
   <div class="content_post">
-    <% if @tweet.image.attached? %>
-      <%= image_tag @tweet.image, class: 'message-image' %>
-    <% end %>
+  <% if @tweet.image.attached? %>
+  <%= image_tag @tweet.image, class: 'message-image', style: 'max-width: 500px; max-height: 500px; object-fit: contain;' %>
+  <% end %>
     <div class="more">
       <span><%= image_tag 'arrow_top.png' %></span>
       <ul class="more_list">

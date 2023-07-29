@@ -2,9 +2,9 @@ class Tweet < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
-  validates :content, presence: true, unless: :was_attached?
+  validates :content, presence: true, if: :image_not_attached?
 
-  def was_attached?
-    self.image.attached?
+  def image_not_attached?
+    !self.image.attached?
   end
 end
