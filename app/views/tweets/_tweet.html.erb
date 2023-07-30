@@ -1,0 +1,22 @@
+<div class="content_post">
+  <% if tweet.image.attached? %>
+    <%= image_tag tweet.image, class: 'message-image', style: 'max-width: 500px; max-height: 500px; object-fit: contain;' %>
+  <% end %>
+  <div class="more">
+    <span><%= image_tag 'arrow_top.png' %></span>
+    <ul class="more_list">
+      <li>
+        <%= link_to '編集', edit_tweet_path(tweet.id), method: :get %>
+      </li>
+      <li>
+        <%= link_to '削除', tweet_path(tweet.id), method: :delete %>
+      </li>
+    </ul>
+  </div>
+  <p><%= tweet.text %></p>
+  <span class="name">
+    <a href="/users/<%= tweet.user.id %>">
+      <span>投稿者</span><%= tweet.user.nickname %>
+    </a>
+  </span>
+</div>
